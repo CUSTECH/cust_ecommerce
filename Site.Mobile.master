@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.Mobile.master.cs" Inherits="Site_Mobile" %>
+
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="" style="overflow-x:hidden;">
+<head id="Head1" runat="server">
+  
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+   <title>CUST E-Commerce</title>
+    <link type="text/css" rel="stylesheet" href="fonts/shipping-font/styles.css">
+	<link rel="stylesheet" href="styles/css/styles.css">
+	<link rel="stylesheet" href="styles/css/theme-common.css" id="theme">
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+     	<!--
+        <div> 
+			<div class="pull-left">
+				<div style="font-size: large">
+					<a runat="server" href="~/Mobile_Default2.aspx" style="font-family: 新細明體; font-size: x-large; color: #00CCFF;" >首頁</a>
+                    <a runat="server" href="~/Mobile_View_By_Supplyer.aspx" style="font-family: 新細明體; font-size: x-large; color: #00CCFF;" >依供應商</a>
+                    <a runat="server" href="~/Mobile_View_By_Type.aspx" style="font-family: 新細明體; font-size: x-large; color: #00CCFF" >依產品種類</a>
+                  
+				</div>
+			</div>
+         </div>
+        -->
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <section class="content-wrapper main-content clear-fix">
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </section>
+      
+    </div>
+    </form>
+</body>
+</html>

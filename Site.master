@@ -1,0 +1,283 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="zh">
+<head runat="server">    
+ <style type="text/css">
+
+     body {
+            margin: 0;
+            padding: 0;
+            background: #EEE;
+            font: 10px/13px 'Lucida Sans',sans-serif;
+        }
+
+        .wrap {
+            overflow: hidden;
+            margin: 10px;
+        }
+
+        .box {
+            float: left;
+            position: relative;
+            width: 20%;
+            padding-bottom: 20%;
+        }
+
+        .boxInner {
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            top: 10px;
+            bottom: 10px;
+            overflow: hidden;
+        }
+
+            .boxInner img {
+                width: 100%;
+            }
+
+            .boxInner .titleBox {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin-bottom: -50px;
+                background: #000;
+                background: rgba(0, 0, 0, 0.5);
+                color: #FFF;
+                padding: 10px;
+                text-align: center;
+                -webkit-transition: all 0.3s ease-out;
+                -moz-transition: all 0.3s ease-out;
+                -o-transition: all 0.3s ease-out;
+                transition: all 0.3s ease-out;
+            }
+
+        body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleBox {
+            margin-bottom: 0;
+        }
+
+        @media only screen and (max-width : 480px) {
+            /* Smartphone view: 1 tile */
+            .box {
+                width: 100%;
+                padding-bottom: 100%;
+            }
+        }
+
+        @media only screen and (max-width : 650px) and (min-width : 481px) {
+            /* Tablet view: 2 tiles */
+            .box {
+                width: 50%;
+                padding-bottom: 50%;
+            }
+        }
+
+        @media only screen and (max-width : 1050px) and (min-width : 651px) {
+            /* Small desktop / ipad view: 3 tiles */
+            .box {
+                width: 33.3%;
+                padding-bottom: 33.3%;
+            }
+        }
+
+        @media only screen and (max-width : 1290px) and (min-width : 1051px) {
+            /* Medium desktop: 4 tiles */
+            .box {
+                width: 25%;
+                padding-bottom: 25%;
+            }
+        }
+        .header
+        {
+          background-color:#B0C4DE;
+          border-top:solid 1px #9dbbcc;
+          border-bottom:solid 1px #9dbbcc;
+        }
+        .separator {
+                    
+                     border-right: 1px solid #ccc;
+                     border-bottom-width:thick;
+                     border-left-width:thick;
+        }
+   
+        .style1
+        {
+            width: 1600px;
+        }
+        .style2
+        {
+            font-size: xx-large;
+            color: #FFFFFF;
+            height: 50px;
+        }
+        .style3
+        {
+            width: 100px;
+        }
+        .style4
+        {     
+            font-family: 微軟正黑體;
+            background-color: #800000;
+        }
+        .style5
+        {
+            font-size: xx-large;
+          
+        }
+         .style6
+        {
+            font-size: large;
+          
+        }
+          .style7
+        {
+            font-size: Small;
+          
+        }
+
+         .left-page-style {
+             width: 10%;
+             height: 800px;
+             background-color: lightgray;
+         }
+          .center-page-style {
+             width: 80%;
+             height: 800px;
+             background-color: lightblue;
+         }
+         .right-page-style {
+             width: 10%;
+             height: 800px;
+             background-color: lightgray;
+         }
+         
+           .main-page-style {
+             width: 80%;
+             height: 800px;
+            font-family: 微軟正黑體;
+            background-color: lightblue;
+             text-align: justify;
+         }
+         .textAlign{
+                text-align:center;
+            }
+         </style>
+    <!-- Enable media queries for old IE -->
+<!--[if lt IE 9]>
+   <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+  <!--  CUST E-Commerce -->
+
+    <link href="http://vjs.zencdn.net/5.16.0/video-js.css" rel="stylesheet">
+
+  <!-- If you'd like to support IE8 -->
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+
+    <!-- #region Jssor Slider Begin -->
+    <!-- Generator: Jssor Slider Maker -->
+    <!-- Source: http://www.jssor.com -->
+    <!-- This code works without jquery library. -->
+    <script src="js/jssor.slider-22.2.8.min.js" type="text/javascript"></script>
+   
+    
+
+  <!-- Syntax Highlighter -->
+  <link href="css/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="css/shThemeDefault.css" rel="stylesheet" type="text/css" />
+  <!-- Demo CSS -->
+	<link rel="stylesheet" href="css/demo.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+
+	<!-- Modernizr -->
+  <script src="js/modernizr.js"></script>
+</head>
+<body class="no-touch">
+     <form runat="server">
+       
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--如需了解 ScriptManager 的搭配指令碼，請參閱 http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--架構指令碼--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />   
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--網站指令碼--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div class="navbar navbar-inverse navbar-fixed-top" style="width:100%"         "background-color:lightgray">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div>
+           <div class="navbar-collapse collapse" style="background-color:orange">
+               <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
+                   <asp:TableRow>
+                       <asp:TableCell>
+                           <asp:Image ID="Image2" runat="server" class="logo" src="http://www.cust.edu.tw/www/img/layout/logo.png" />
+                       </asp:TableCell>
+
+                   </asp:TableRow>
+                   <asp:TableRow>
+
+                       <asp:TableCell>
+                       <ul class="nav navbar-nav" style="background-color:lightgreen">
+                         <li><a runat="server" href="~/Default.aspx"  style="color:black;">首頁</a></li>        
+                         <li><a runat="server" href="~/View_By_Supplyer.aspx"  style="color:black;">依供應商</a></li>     
+                         <li><a runat="server" href="~/View_By_TYpe.aspx"  style="color:black;">依產品種類</a></li>        
+                         <li><a runat="server" href="~/View_By_Discount.aspx"  style="color:black;">折扣商品</a></li>        
+                         <li><a runat="server" href="~/View_By_Hot_Sell_Item.aspx" style="color:black;" >熱賣商品</a></li>     
+                         <li><a runat="server" href="~/ShoppingCart.aspx"  style="color:black;">前往購物車</a></li>  
+                         <li><a runat="server" href="~/Shipping.aspx"  style="color:black;">寄送商品</a></li>                                                         
+                         <li><a runat="server" href="On_Line_Support.aspx"  style="color:black;">線上客服</a></li> 
+                         <li><a runat="server" href="~/How-To-Use.aspx" style="color:black;" >如何使用</a></li>
+                         <li><a runat="server" href="~/About"  style="color:black;">關於商城</a></li>                                        
+                      </ul>
+
+                       </asp:TableCell>
+                   </asp:TableRow>
+
+               </asp:Table>
+             </div> 
+            </div>     
+           </div>
+           </div>
+            <div class="container body-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+                <footer>
+                    <p>&copy; <%: DateTime.Now.Year %> - - %中華科大電商網</p>
+                </footer>
+            </div>
+      
+</form>
+    
+</body>
+</html> 
