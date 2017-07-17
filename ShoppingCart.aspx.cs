@@ -10,10 +10,11 @@ public partial class ShoppingCart : System.Web.UI.Page
     private double total = 0;
     private Boolean hasItem = false;
     static public string Order_List = "CUST E-Commerce \r\n";
+    static string Seven_Eleven_Store_Address = "";
     protected void Page_Init(object sender, EventArgs e)
     {
-       
 
+        TextBox_Seven_Eleven_Address.Visible = false;
         // 宣告WHERE子句的IN條件 
         //  string Converted_string = HttpUtility.UrlEncode("商品編號");
         //  string where = "WHERE [Converted_string] IN (";
@@ -105,6 +106,8 @@ public partial class ShoppingCart : System.Web.UI.Page
     protected void Button_送出訂單_Click(object sender, EventArgs e)
 
     {
+        Seven_Eleven_Store_Address= TextBox_Seven_Eleven_Address.Text.ToString();
+      
         switch (RadioButtonList_付款方式.SelectedIndex)
         {
             case 0:
@@ -162,13 +165,19 @@ public partial class ShoppingCart : System.Web.UI.Page
             case 4:
                 {
                     Order_List += " 物流方式 : 超商取貨";
+                    Order_List += "超商地址 : " + Seven_Eleven_Store_Address;
                     break;
                 }
             default:
                 {
                     break;
                 }
+               
+
+
         }
+        TextBox_Seven_Eleven_Address.Text = "取貨之超商地址";
+        TextBox_Seven_Eleven_Address.Visible = false;
         Response.Redirect("Order.aspx?User=" + Server.UrlDecode(Order_List));
     }
 
@@ -179,19 +188,20 @@ public partial class ShoppingCart : System.Web.UI.Page
         switch (RadioButtonList_物流方式.SelectedIndex)
         {
             case 0:
-                TextBox_Message_Box.Text = " You Choose 快遞 !";
+                TextBox_Message_Box.Text = " 你選擇了 快遞 ! 送出訂單時 請記得填上送貨地址";
                 break;
             case 1:
-                TextBox_Message_Box.Text = " You Choose 自行取貨 !";
+                TextBox_Message_Box.Text = " 你選擇了 自行取貨 ! 取貨地點為 中華科大實習商店";
                 break;
             case 2:
-                TextBox_Message_Box.Text = " You Choose 郵寄!";
+                TextBox_Message_Box.Text = " 你選擇了 郵寄! 送出訂單時 請記得填上送貨地址";
                 break;
             case 3:
-                TextBox_Message_Box.Text = " You Choose 臨櫃取貨 !";
+                TextBox_Message_Box.Text = " 你選擇了 臨櫃取貨 ! 取貨地點為 中華科大實習商店";
                 break;
             case 4:
-                TextBox_Message_Box.Text = " You Choose 超商取貨 !";
+                TextBox_Message_Box.Text = " 你選擇了 超商取貨 ! 請先使用下列超商連結 選擇取貨之超商地址 貼在下列 ";
+                TextBox_Seven_Eleven_Address.Visible = true;
                 break;
             default:
                 break;
@@ -203,19 +213,19 @@ public partial class ShoppingCart : System.Web.UI.Page
         switch (RadioButtonList_付款方式.SelectedIndex)
         {
             case 0:
-                TextBox_Message_Box.Text = " You Choose 信用卡支付 !";
+                TextBox_Message_Box.Text = " 你選擇了 信用卡支付 ! 信用卡支付準備中!";
                 break;
             case 1:
-                TextBox_Message_Box.Text = " You Choose 支付寶支付 !";
+                TextBox_Message_Box.Text = " 你選擇了 支付寶支付 ! 支付寶支付準備中!";
                 break;
             case 2:
-                TextBox_Message_Box.Text = " You Choose 跨境通支付 !";
+                TextBox_Message_Box.Text = " 你選擇了 跨境通支付 ! 跨境通支付準備中!";
                 break;
             case 3:
-                TextBox_Message_Box.Text = " You Choose 貨到付款 !";
+                TextBox_Message_Box.Text = " 你選擇了 貨到付款 !";
                 break;
             case 4:
-                TextBox_Message_Box.Text = " You Choose 轉帳支付 !";
+                TextBox_Message_Box.Text = " 你選擇了 轉帳支付 ! 送出訂單時請填上轉帳帳號!";
                 break;
             default:
                 break;

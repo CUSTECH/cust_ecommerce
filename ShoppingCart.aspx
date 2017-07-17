@@ -9,9 +9,13 @@
 
         </asp:Table>
         <div style="text-align:center">  
-             <h1> Welcome Shopping </h1>  
+             <h1> 中華科大電商網 </h1>  
         </div>
-        <asp:TextBox ID="TextBox1" runat="server" style="text-align: center" Text="中華科大電商網購物明細：" Font-Size = "large" ForeColor="Blue" Width="100%"></asp:TextBox>
+        <div class="col-md-10">
+            <asp:TextBox ID="TextBox1" runat="server" Style="text-align: center" Text="中華科大電商網購物明細：" Font-Size="large" ForeColor="Blue" Width="100%">
+
+            </asp:TextBox>
+        </div>
         <br />
         <br />
     <br />
@@ -59,10 +63,14 @@
               </asp:RadioButtonList>
          
     <br /> <br /> <br />
-    <asp:TextBox ID="TextBox_Message_Box" runat="server" Width="50%">
-   
+    <div >
+         <asp:TextBox ID="TextBox_Message_Box" runat="server" Width="100%" TextMode="MultiLine">
 
-    </asp:TextBox>
+         </asp:TextBox> 
+        <br />
+         <asp:TextBox ID="TextBox_Seven_Eleven_Address" runat="server" Width="100%" TextMode="MultiLine" Visible="False">取貨之超商地址</asp:TextBox> 
+    </div>
+           <br /> <br /> <br />
           <div>
               <asp:Panel ID="Panel1" runat="server" Width="100%">
                   <a href="https://emap.pcsc.com.tw/" target="_blank" style="color: green">7-11門市查詢</a> |
@@ -77,13 +85,13 @@
               <asp:ListItem> 支付寶支付    </asp:ListItem>
               <asp:ListItem> 跨境通支付    </asp:ListItem>
               <asp:ListItem> 貨到付款      </asp:ListItem>
-              <asp:ListItem> 轉帳支付      </asp:ListItem>
+              <asp:ListItem> 轉帳支付 :  帳號 -> 郵政劃撥儲金帳戶 19207275   </asp:ListItem>
           </asp:RadioButtonList>
      </div>
       <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">      
         <asp:TableRow runat="server">
             <asp:TableCell runat="server" HorizontalAlign="Center">
-              <asp:Button ID="Button_送出訂單" runat="server" Text="送出訂單" style="text-align: center" OnClick="Button_送出訂單_Click" />
+              <asp:Button ID="Button_送出訂單" runat="server" Text="送出訂單" style="text-align: center" OnClick="Button_送出訂單_Click" BackColor="#CCFFFF" />
             </asp:TableCell>
         </asp:TableRow>
        </asp:Table>

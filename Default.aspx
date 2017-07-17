@@ -27,18 +27,18 @@
   
     <div>
         <asp:Table ID="Table2" runat="server" class="col-md-12">
-            <asp:TableRow runat="server" Height="10px" Style="background-color: aqua">
+            <asp:TableRow runat="server" Height="10px" Style="background-color: white">
 
             </asp:TableRow>
 
         </asp:Table>
-        <div class="col_md-12">
-            <div">
+        <div class="centerBlock" >
+            <div>
                 <asp:ImageButton ID="ImageButton_Left" runat="server"
                     ImageUrl="~/images/Left_Arrow.png" Width="5%" style="float:left"
                     OnClientClick="Left_Arrow_Click" OnClick="ImageButton_Left_Click" />
             </div>
-            <div>
+            <div class="col_md-12">
                 <asp:Image ID="Slide_Image"
                     runat="server" ImageUrl="~/Slide_Picture/Slide_1.jpg" Width="90%" Height="300px" style="float:left" HorizontalAlign="Center" />
             </div>
@@ -56,11 +56,8 @@
         <table class="col-md-12" style="width: 100%">
              
             <tr>
-                <td class="col-md-1" style="background-image: url('images/BackGround_4.jpg');">
-                         
-                </td>
-
-                <td style="background-color: #CCFFFF" class="col-md-10">
+                <td  class="col-md-1">
+                <td  class="col-md-10">
                     <br />
                     
                     <div class="wrap">
@@ -69,12 +66,11 @@
                             <AlternatingItemTemplate>
                                 <div class="box">
                                     <div class="boxInner">
-                                        <asp:Image ID="Image_商品圖片" runat="server" ImageAlign="middle" CssClass="img-responsive" Style="height: 60%"
-                                            ImageUrl='<%# Eval("商品名稱", "~/images/{0}.jpg") %>' />
-                                        <asp:HyperLink ID="HyperLink_商品編號" runat="server" Font-Size="Small"
-                                            NavigateUrl='<%# Eval("商品編號", "DetailsItem.aspx?Id={0}") %>'
-                                            Text='<%# Eval("商品編號") %>'></asp:HyperLink>
-                                        <br />
+                                        <a href='<%# Eval("商品編號", "DetailsItem.aspx?Id={0}") %>'>
+                                           <asp:Image ID="Image_商品圖片" runat="server" ImageAlign="middle" CssClass="my-image" Style="height: 75%"
+                                           ImageUrl='<%# Eval("商品名稱", "~/images/{0}.jpg") %>' />
+									    </a>
+                                       
                                         <asp:Label ID="商品名稱_Label" runat="server" Font-Size="Small" role="menuitem" Text='<%# Eval("商品名稱") %>'></asp:Label>
                                         <br />
                                         特價  :
@@ -89,20 +85,19 @@
                             <ItemTemplate>
                                 <div class="box">
                                     <div class="boxInner">
-                                        <asp:Image ID="Image_商品圖片" runat="server" ImageAlign="middle" CssClass="img-responsive" Style="height: 60%"
-                                            ImageUrl='<%# Eval("商品名稱", "~/images/{0}.jpg") %>' />
-                                        <asp:HyperLink ID="HyperLink_商品編號" runat="server" Font-Size="Small"
-                                            NavigateUrl='<%# Eval("商品編號", "DetailsItem.aspx?Id={0}") %>'
-                                            Text='<%# Eval("商品編號") %>'></asp:HyperLink>
-                                        <br />
+                                        <a href='<%# Eval("商品編號", "DetailsItem.aspx?Id={0}") %>'>
+                                           <asp:Image ID="Image_商品圖片" runat="server" ImageAlign="middle" CssClass="my-image" Style="height: 75%"
+                                           ImageUrl='<%# Eval("商品名稱", "~/images/{0}.jpg") %>' />
+									    </a>
+                                       
                                         <asp:Label ID="商品名稱_Label" runat="server" Font-Size="Small" role="menuitem" Text='<%# Eval("商品名稱") %>'></asp:Label>
                                         <br />
                                         特價  :
-                                        <asp:Label ID="商品售價_Label" runat="server" Font-Size="Small" Text='<%# Eval("商品售價") %>'>></asp:Label> 
-                                       
-                                        <div class="titleBox">
+                                        <asp:Label ID="商品售價_Label" runat="server" Font-Size="Small" Text='<%# Eval("商品售價") %>'>></asp:Label>
+                                        <div class="titleBox">                                        
                                           原價 : <%# Eval("商品原價") %>
                                         </div>
+
                                     </div>
                                 </div>
                             </ItemTemplate>
@@ -119,7 +114,7 @@
                                     </div>
                                 </div>
                                 <div style="text-align: center">
-                                    <asp:DataPager ID="DataPager1" runat="server" PageSize="12">
+                                    <asp:DataPager ID="DataPager1" runat="server" PageSize="9">
                                         <Fields>
                                             <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True"
                                                 ShowLastPageButton="True" />
@@ -128,6 +123,7 @@
                                 </div>
                             </LayoutTemplate>
                         </asp:ListView>
+                       
                     </div>
 
 
@@ -142,9 +138,8 @@
 
 
                 </td>
-                <td class="col-md-1" style="background-image: url('images/BackGround_4.jpg');">
-                         
-                </td>
+                <td  class="col-md-1">
+               
             </tr>
 
         </table>

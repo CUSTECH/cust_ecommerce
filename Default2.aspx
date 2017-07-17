@@ -75,14 +75,13 @@
 
                         <asp:ListView ID="ListView2" runat="server" DataSourceID="SqlDataSource2" GroupItemCount="4" Style="width: 100%" OnLoad="Page_Load">
                             <AlternatingItemTemplate>
-                                <div class="box">
+                                 <div class="box">
                                     <div class="boxInner">
-                                        <asp:Image ID="Image_商品圖片" runat="server" ImageAlign="middle" CssClass="img-responsive" Style="height: 70%"
-                                            ImageUrl='<%# Eval("商品名稱", "~/images/{0}.jpg") %>' />
-                                        <asp:HyperLink ID="HyperLink_商品編號" runat="server" Font-Size="Small"
-                                            NavigateUrl='<%# Eval("商品編號", "DetailsItem.aspx?Id={0}") %>'
-                                            Text='<%# Eval("商品編號") %>'></asp:HyperLink>
-                                        <br />
+                                        <a href='<%# Eval("商品編號", "DetailsItem.aspx?Id={0}") %>'>
+                                           <asp:Image ID="Image_商品圖片" runat="server" ImageAlign="middle" CssClass="img-responsive" Style="height: 60%"
+                                           ImageUrl='<%# Eval("商品名稱", "~/images/{0}.jpg") %>' />
+									    </a>
+                                       
                                         <asp:Label ID="商品名稱_Label" runat="server" Font-Size="Small" role="menuitem" Text='<%# Eval("商品名稱") %>'></asp:Label>
                                         <br />
                                         特價  :
@@ -97,20 +96,19 @@
                             <ItemTemplate>
                                 <div class="box">
                                     <div class="boxInner">
-                                        <asp:Image ID="Image_商品圖片" runat="server" ImageAlign="middle" CssClass="img-responsive" Style="height: 70%"
-                                            ImageUrl='<%# Eval("商品名稱", "~/images/{0}.jpg") %>' />
-                                        <asp:HyperLink ID="HyperLink_商品編號" runat="server" Font-Size="Small"
-                                            NavigateUrl='<%# Eval("商品編號", "DetailsItem.aspx?Id={0}") %>'
-                                            Text='<%# Eval("商品編號") %>'></asp:HyperLink>
-                                        <br />
+                                        <a href='<%# Eval("商品編號", "DetailsItem.aspx?Id={0}") %>'>
+                                           <asp:Image ID="Image_商品圖片" runat="server" ImageAlign="middle" CssClass="img-responsive" Style="height: 60%"
+                                           ImageUrl='<%# Eval("商品名稱", "~/images/{0}.jpg") %>' />
+									    </a>
+                                       
                                         <asp:Label ID="商品名稱_Label" runat="server" Font-Size="Small" role="menuitem" Text='<%# Eval("商品名稱") %>'></asp:Label>
                                         <br />
                                         特價  :
-                                        <asp:Label ID="商品售價_Label" runat="server" Font-Size="Small" Text='<%# Eval("商品售價") %>'>></asp:Label> 
-                                       
-                                        <div class="titleBox">
+                                        <asp:Label ID="商品售價_Label" runat="server" Font-Size="Small" Text='<%# Eval("商品售價") %>'>></asp:Label>
+                                        <div class="titleBox">                                        
                                           原價 : <%# Eval("商品原價") %>
                                         </div>
+
                                     </div>
                                 </div>
                             </ItemTemplate>
