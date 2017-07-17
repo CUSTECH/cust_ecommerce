@@ -31,13 +31,8 @@ public partial class Web_Maintenence : System.Web.UI.Page
     protected void gvbind()
     {
 
-        //  Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\myFolder\myAccessFile.accdb;
-        //  Persist Security Info = False;
-        // using (var conn = new OleDbConnection("Provider = Microsoft.Jet.OLEDB.4.0; Data Source = D:\\mydb.mdb")) for old version of access 2003 mdb file
-
-        //  using (var conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\K-2016-11-23-01 (with new Maintenence Platform)\\RH-e-store\\App_Data\\whowhat.accdb"))
-        // using (var conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\RH-e-store//app_Data\\whowhat.accdb"))
-        conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\RH-e-store\\App_Data\\whowhat.accdb");
+       
+        conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\cust_ecommerce\\App_Data\\whowhat.accdb");
         conn.Open();
         OleDbCommand cmd = new OleDbCommand("Select * from 資料表1", conn);
         OleDbDataAdapter da = new OleDbDataAdapter(cmd);
@@ -67,7 +62,7 @@ public partial class Web_Maintenence : System.Web.UI.Page
 
     protected void GridView1_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
-        conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\RH-e-store\\App_Data\\whowhat.accdb");
+        conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\cust_ecommerce\\App_Data\\whowhat.accdb");
         GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];
         Label lbldeleteid = (Label)row.FindControl("lblID");
         conn.Open();
@@ -89,7 +84,7 @@ public partial class Web_Maintenence : System.Web.UI.Page
     }
     protected void GridView1_RowUpdating(object sender, GridViewUpdateEventArgs e)
     {
-        string StrDbCon = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\RH-e-store\\App_Data\\whowhat.accdb";
+        string StrDbCon = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\cust_ecommerce\\App_Data\\whowhat.accdb";
         conn = new OleDbConnection(StrDbCon);
         int userid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value.ToString());
         GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];
@@ -223,7 +218,7 @@ public partial class Web_Maintenence : System.Web.UI.Page
         //GridView1.EditIndex = -1;
         DetailsView1.ChangeMode(DetailsViewMode.Edit);
 
-        //   string StrDbCon = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\RH-e-store\\App_Data\\whowhat.accdb";
+        //   string StrDbCon = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\cust_ecommerce\\App_Data\\whowhat.accdb";
         //   conn = new OleDbConnection(StrDbCon);
         // int userid = Convert.ToInt32(GridView1.DataKeys[e.RowIndex].Value.ToString());
         // GridViewRow row = (GridViewRow)GridView1.Rows[e.RowIndex];
@@ -277,15 +272,15 @@ public partial class Web_Maintenence : System.Web.UI.Page
         //  DirectCast(DetailsView.FindControl("txtUserName"), TextBox).Text = GetUserName(CurrentUID())
 
 
-        string StrDbCon = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\RH-e-store\\App_Data\\whowhat.accdb";
+        string StrDbCon = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\cust_ecommerce\\App_Data\\whowhat.accdb";
         conn = new OleDbConnection(StrDbCon);
     }
 
     protected void Button_新增輸入資料進資料庫_Click(object sender, EventArgs e)
     {
-        string StrDbCon = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\RH-e-store\\App_Data\\whowhat.accdb";
+        string StrDbCon = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\cust_ecommerce\\App_Data\\whowhat.accdb";
         conn = new OleDbConnection(StrDbCon);
-        // public OleDbConnection My_conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\RH-e-store\\App_Data\\whowhat.accdb");
+        // public OleDbConnection My_conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\cust_ecommerce\\App_Data\\whowhat.accdb");
         string S_商品廠商 = TextBox_商品廠商.Text;
         string S_商品類別 = TextBox_商品類別.Text;
         string S_商品編號 = TextBox_商品編號.Text;

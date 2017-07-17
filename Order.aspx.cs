@@ -48,9 +48,9 @@ public partial class Order : System.Web.UI.Page
 
 protected void Update_Order_DataBase()
     {
-        string StrDbCon = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\RH-e-store\\App_Data\\WhoWhat.accdb";
+        string StrDbCon = "Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\cust_ecommerce\\App_Data\\WhoWhat.accdb";
         conn = new OleDbConnection(StrDbCon);
-        // public OleDbConnection My_conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\RH-e-store\\App_Data\\whowhat.accdb");
+        // public OleDbConnection My_conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\cust_ecommerce\\App_Data\\whowhat.accdb");
         //string S_訂單編號 = Order_Number;
         string S_訂購者 = "訂購者";
         string S_訂單內容 = Decoded_Purchase_List1.Replace("\r","");
@@ -112,7 +112,7 @@ protected void Button_確認訂單_Click(object sender, EventArgs e)
         msg.Priority = MailPriority.Normal;//郵件優先級 
         SmtpClient MySmtp = new SmtpClient("smtp.gmail.com", 587);
         //設定你的帳號密碼
-        MySmtp.Credentials = new System.Net.NetworkCredential("kentsun0401@gmail.com", "victoria2");
+        MySmtp.Credentials = new System.Net.NetworkCredential("kentsun0401@gmail.com", "******");
         //Gmial 的 smtp 使用 SSL
         MySmtp.EnableSsl = true;
         MySmtp.Send(msg);
@@ -126,7 +126,7 @@ protected void Button_確認訂單_Click(object sender, EventArgs e)
         //  msg.IsBodyHtml = true;     
         msg.Priority = MailPriority.Normal;//郵件優先級 
         //設定你的帳號密碼
-        MySmtp.Credentials = new System.Net.NetworkCredential("kentsun0401@gmail.com", "victoria2");
+        MySmtp.Credentials = new System.Net.NetworkCredential("kentsun0401@gmail.com", "*******");
         //Gmial 的 smtp 使用 SSL
 
         MySmtp.Send(msg);
