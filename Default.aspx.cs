@@ -20,14 +20,14 @@ public partial class _Default : Page
     protected void ImageButton_Left_Click(object sender, ImageClickEventArgs e)
     {
         
-        String Slide_Picture_Number_String = Slide_Image.ImageUrl.Replace("~/Slide_Picture/Slide_", "");
-        Slide_Picture_Number_String = Slide_Picture_Number_String.Replace(".jpg", "");
-        int Slide_Number = Convert.ToInt32(Slide_Picture_Number_String);
-        if (Slide_Number <=1)
-            Slide_Number = 3;
-        else
-            Slide_Number--;
-        Slide_Image.ImageUrl = "~/Slide_Picture/Slide_" + Slide_Number.ToString() + ".jpg";
+      //  String Slide_Picture_Number_String = Slide_Image.ImageUrl.Replace("~/Slide_Picture/Slide_", "");
+      //  Slide_Picture_Number_String = Slide_Picture_Number_String.Replace(".jpg", "");
+     //   int Slide_Number = Convert.ToInt32(Slide_Picture_Number_String);
+     //   if (Slide_Number <=1)
+     //       Slide_Number = 3;
+     //   else
+     //       Slide_Number--;
+     //   Slide_Image.ImageUrl = "~/Slide_Picture/Slide_" + Slide_Number.ToString() + ".jpg";
      //   String Slide_Picture_Number_String = Slide_Image.ImageUrl.Replace("~/Slide_Picture/Slide_", "");
      //   Slide_Picture_Number_String = Slide_Picture_Number_String.Replace(".png", "");
      //   int Slide_Number = Convert.ToInt32(Slide_Picture_Number_String);
@@ -40,14 +40,14 @@ public partial class _Default : Page
 
     protected void ImageButton_Right_Click(object sender, ImageClickEventArgs e)
     {
-        String Slide_Picture_Number_String = Slide_Image.ImageUrl.Replace("~/Slide_Picture/Slide_", "");
-        Slide_Picture_Number_String = Slide_Picture_Number_String.Replace(".jpg", "");
-        int Slide_Number = Convert.ToInt32(Slide_Picture_Number_String);
-        if (Slide_Number >= 3)
-            Slide_Number = 1;
-        else
-            Slide_Number++;
-        Slide_Image.ImageUrl = "~/Slide_Picture/Slide_" + Slide_Number.ToString() + ".jpg";
+     //   String Slide_Picture_Number_String = Slide_Image.ImageUrl.Replace("~/Slide_Picture/Slide_", "");
+     //   Slide_Picture_Number_String = Slide_Picture_Number_String.Replace(".jpg", "");
+    //    int Slide_Number = Convert.ToInt32(Slide_Picture_Number_String);
+     //   if (Slide_Number >= 3)
+    //        Slide_Number = 1;
+    //    else
+   //         Slide_Number++;
+   //     Slide_Image.ImageUrl = "~/Slide_Picture/Slide_" + Slide_Number.ToString() + ".jpg";
       //  String Slide_Picture_Number_String = Slide_Image.ImageUrl.Replace("~/Slide_Picture/Slide_", "");
       //  Slide_Picture_Number_String = Slide_Picture_Number_String.Replace(".png", "");
       //  int Slide_Number = Convert.ToInt32(Slide_Picture_Number_String);
@@ -59,8 +59,10 @@ public partial class _Default : Page
     }
     protected void Page_Load(object sender, EventArgs e)
     {
-
+       
     }
 
-    
+
+
+   
 }

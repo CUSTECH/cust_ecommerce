@@ -23,6 +23,31 @@
             }
         });
     </script>
+     <!-- End SlidesJS Required: Start Slides -->
+
+  <!-- SlidesJS Required: Link to jQuery -->
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+  <!-- End SlidesJS Required -->
+
+  <!-- SlidesJS Required: Link to jquery.slides.js -->
+  <script src="js/jquery.slides.min.js"></script>
+  <!-- End SlidesJS Required -->
+
+  <!-- SlidesJS Required: Initialize SlidesJS with a jQuery doc ready -->
+    <script>
+    $(function() {
+      $('#slides').slidesjs({
+        width: 940,
+        height: 528,
+        play: {
+          active: true,
+          auto: true,
+          interval: 4000,
+          swap: true
+        }
+      });
+    });
+  </script>
 	<br><br><br><br><br><br>
   
     <div>
@@ -32,24 +57,17 @@
             </asp:TableRow>
 
         </asp:Table>
-        <div class="centerBlock" >
-            <div>
-                <asp:ImageButton ID="ImageButton_Left" runat="server"
-                    ImageUrl="~/images/Left_Arrow.png" Width="5%" style="float:left"
-                    OnClientClick="Left_Arrow_Click" OnClick="ImageButton_Left_Click" />
-            </div>
-            <div class="col_md-12">
-                <asp:Image ID="Slide_Image"
-                    runat="server" ImageUrl="~/Slide_Picture/Slide_1.jpg" Width="90%" Height="300px" style="float:left" HorizontalAlign="Center" />
-            </div>
-            <div>
-                <asp:ImageButton ID="ImageButton_Right" runat="server"
-                    ImageUrl="~/images/Right_Arrow.png" Width="5%" style="float:left" OnClientClick="Right_Arrow_Click"
-                    OnClick="ImageButton_Right_Click" />
+        <div class="slide_container">
+            <div id="slides">
+                <img src="Slide_Picture/Slide_1.jpg" alt="Photo by: CUST: http://www.flickr.com/photos/listenmissy/5087404401/">
+                <img src="Slide_Picture/Slide_3.jpg" alt="Photo by: CUST: http://www.flickr.com/photos/27874907@N04/4833059991/">
+                 <img src="Slide_Picture/Slide_6.jpg" alt="Photo by: CUST: http://www.flickr.com/photos/27874907@N04/4833059991/">
+                <img src="Slide_Picture/Slide_4.jpg" alt="Photo by: CUST: http://www.flickr.com/photos/27874907@N04/4833059991/">
+                <img src="Slide_Picture/Slide_5.jpg" alt="Photo by: CUST: http://www.flickr.com/photos/27874907@N04/4833059991/">
             </div>
         </div>
-         <asp:Table ID="Table1" runat="server" class="col-md-12">
-        <asp:TableRow runat="server" Height="50px" Style="background-color: aqua">
+        <asp:Table ID="Table1" runat="server" class="col-md-12">
+        <asp:TableRow runat="server" Height="10px" Style="background-color: aqua">
         </asp:TableRow>
 
     </asp:Table>
@@ -67,7 +85,7 @@
                                 <div class="box">
                                     <div class="boxInner">
                                         <a href='<%# Eval("商品編號", "DetailsItem.aspx?Id={0}") %>'>
-                                           <asp:Image ID="Image_商品圖片" runat="server" ImageAlign="middle" CssClass="my-image" Style="height: 75%"
+                                           <asp:Image ID="Image_商品圖片" runat="server" ImageAlign="middle" CssClass="my-image" Style="height: 80%"
                                            ImageUrl='<%# Eval("商品名稱", "~/images/{0}.jpg") %>' />
 									    </a>
                                        
@@ -86,7 +104,7 @@
                                 <div class="box">
                                     <div class="boxInner">
                                         <a href='<%# Eval("商品編號", "DetailsItem.aspx?Id={0}") %>'>
-                                           <asp:Image ID="Image_商品圖片" runat="server" ImageAlign="middle" CssClass="my-image" Style="height: 75%"
+                                           <asp:Image ID="Image_商品圖片" runat="server" ImageAlign="middle" CssClass="my-image" Style="height: 80%"
                                            ImageUrl='<%# Eval("商品名稱", "~/images/{0}.jpg") %>' />
 									    </a>
                                        
@@ -145,6 +163,9 @@
         </table>
 
     </div>
+  
+
+   
 </asp:Content>
 
 

@@ -112,7 +112,7 @@ protected void Button_確認訂單_Click(object sender, EventArgs e)
         msg.Priority = MailPriority.Normal;//郵件優先級 
         SmtpClient MySmtp = new SmtpClient("smtp.gmail.com", 587);
         //設定你的帳號密碼
-        MySmtp.Credentials = new System.Net.NetworkCredential("kentsun0401@gmail.com", "******");
+        MySmtp.Credentials = new System.Net.NetworkCredential("kentsun0401@gmail.com", "victoria2");
         //Gmial 的 smtp 使用 SSL
         MySmtp.EnableSsl = true;
         MySmtp.Send(msg);
@@ -126,7 +126,7 @@ protected void Button_確認訂單_Click(object sender, EventArgs e)
         //  msg.IsBodyHtml = true;     
         msg.Priority = MailPriority.Normal;//郵件優先級 
         //設定你的帳號密碼
-        MySmtp.Credentials = new System.Net.NetworkCredential("kentsun0401@gmail.com", "*******");
+        MySmtp.Credentials = new System.Net.NetworkCredential("kentsun0401@gmail.com", "victoria2");
         //Gmial 的 smtp 使用 SSL
 
         MySmtp.Send(msg);
@@ -138,3 +138,4 @@ protected void Button_確認訂單_Click(object sender, EventArgs e)
 
     } 
 }
+   

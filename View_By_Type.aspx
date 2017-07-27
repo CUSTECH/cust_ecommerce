@@ -77,7 +77,7 @@
 
                     <div class="wrap">
                         <asp:Panel runat="server" ID="Panel2" HorizontalAlign="Center">
-                            <asp:Image ID="Page_Logo" runat="server" ImageUrl="~/images/BackGround.jpg" Width="100%" Height="200px" ImageAlign="Middle" />
+                            <asp:Image ID="Page_Logo" runat="server" ImageUrl="~/images/BackGround.jpg" Width="80%" Height="200px" ImageAlign="Middle" />
                         </asp:Panel>
 
                         <asp:ListView ID="ListView2" runat="server" DataSourceID="SqlDataSource2" GroupItemCount="4" Style="width: 100%" OnLoad="Page_Load">

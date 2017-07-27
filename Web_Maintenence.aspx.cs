@@ -31,7 +31,12 @@ public partial class Web_Maintenence : System.Web.UI.Page
     protected void gvbind()
     {
 
-       
+        //  Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\myFolder\myAccessFile.accdb;
+        //  Persist Security Info = False;
+        // using (var conn = new OleDbConnection("Provider = Microsoft.Jet.OLEDB.4.0; Data Source = D:\\mydb.mdb")) for old version of access 2003 mdb file
+
+        //  using (var conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\K-2016-11-23-01 (with new Maintenence Platform)\\cust_ecommerce\\App_Data\\whowhat.accdb"))
+        // using (var conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\cust_ecommerce//app_Data\\whowhat.accdb"))
         conn = new OleDbConnection("Provider = Microsoft.ACE.OLEDB.12.0; Data Source = C:\\inetpub\\wwwroot\\cust_ecommerce\\App_Data\\whowhat.accdb");
         conn.Open();
         OleDbCommand cmd = new OleDbCommand("Select * from 資料表1", conn);

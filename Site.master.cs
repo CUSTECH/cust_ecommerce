@@ -73,4 +73,6 @@ public partial class SiteMaster : MasterPage
     {
         Context.GetOwinContext().Authentication.SignOut();
     }
+
+   
 }
